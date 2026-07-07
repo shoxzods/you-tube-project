@@ -5,7 +5,7 @@ const authRouter = Router();
 
 authRouter.post('/register' , async ( req , res ) => {
     console.log('salom');
-    const data = await pool.query('select * from users');
+    // const data = await pool.query('select * from users');
 })
 
 export default authRouter;

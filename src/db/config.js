@@ -1,5 +1,7 @@
 import { Pool } from "pg";
 import { configDotenv } from "dotenv";
+import fs from "fs";
+import { join } from "path";
 configDotenv();
 
 const pool = new Pool({
@@ -15,7 +17,7 @@ function connectDatabase() {
         pool.connect();
         console.log('database is connected');
     } catch ( err ) {
-        console.log(err.message);
+        fs.appendFileSync(join(process.cwd() , 'src' , 'logger' , 'error.txt') , `\n${new Date().toLocaleDateString()}__err_name:${err.name}___err_message:${err.message}`);
     }
 }
 
