@@ -10,7 +10,6 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD
 });
 
-
 function connectDatabase() {
     try {
         pool.connect();
