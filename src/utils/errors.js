@@ -7,4 +7,13 @@ class BadRequest extends Error {
     }
 }
 
-export { BadRequest }
+class ConfilctError extends Error {
+    constructor(status , message) {
+        super();
+        this.status = status
+        this.name = "Confilct"
+        this.message = message
+    }
+}
+
+export { BadRequest , ConfilctError };

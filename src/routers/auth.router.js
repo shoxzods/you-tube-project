@@ -1,13 +1,22 @@
 import { Router } from "express";
-import pool from "../db/config.js";
+import multer from "multer";
+import { join } from "path";
 import validation from "../middleware/validation.js";
+import { register } from "../controllers/auth.controller.js";
 
 const authRouter = Router();
+const storage = multer.diskStorage({
+    destination( req , file , cb ) {
+        cb(null , join(process.cwd() , "src" , "uploads") )
+    },
 
-
-authRouter.post('/register' , validation , async ( req , res ) => {
-    console.log('salom');
-    // const data = await pool.query('select * from users');
+    filename( _ , file , cb ) {
+        cb(null ,  Date.now() + '.' + file.mimetype.split('/')[1] )
+    }
 })
+
+const upload = multer({storage});
+
+authRouter.post('/register' , upload.single('image') , validation , register);
 
 export default authRouter;

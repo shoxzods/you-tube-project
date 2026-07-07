@@ -19,9 +19,13 @@ app.use(( err , req , res , next ) => {
             message:err.message
         })
     } else {
-        console.log('internal server error')
+        return res.status(500).json({
+            success:false,
+            message: "Internal Server Error"
+        })
     }
-})
+});
+
 app.listen(process.env.PORT , () => {
     console.log('server is running')
 });
