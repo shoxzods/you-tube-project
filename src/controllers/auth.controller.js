@@ -3,7 +3,7 @@ import JWT from "jsonwebtoken";
 import pool from "../db/config.js";
 import { ConfilctError } from "../utils/errors.js";
 
-const register = async ( req , res , next ) => {
+const register = async( req , res , next ) => {
     const { full_name , password } = req.body;
     const img = !req.file ? null : Date.now() + '.' + req.file.mimetype.split('/')[1];
     const hash_pass = sha256(password);
@@ -20,4 +20,7 @@ const register = async ( req , res , next ) => {
     })
 }
 
-export { register };
+const login = async( req , res ) =>  {
+}
+
+export { register , login };

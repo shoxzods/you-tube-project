@@ -2,7 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import { join } from "path";
 import validation from "../middleware/validation.js";
-import { register } from "../controllers/auth.controller.js";
+import { register , login } from "../controllers/auth.controller.js";
 
 const authRouter = Router();
 const storage = multer.diskStorage({
@@ -17,6 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-authRouter.post('/register' , upload.single('image') , validation , register);
+authRouter.post('/register' , upload.single('image') , validation , register)
+          .post('/login' , validation , login )
 
 export default authRouter;
