@@ -3,8 +3,8 @@ import { Router } from "express";
 const authRouter = Router();
 
 
-authRouter.post('/register' , () => {
-    console.log('salom')
+authRouter.post('/register' , ( req , res ) => {
+    console.log('salom');
 })
 
 export default authRouter;
