@@ -18,6 +18,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 authRouter.post('/register' , upload.single('image') , validation , register)
-          .post('/login' , validation , login )
+          .post('/login' , upload.none() , validation , login )
 
 export default authRouter;

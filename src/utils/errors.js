@@ -16,4 +16,13 @@ class ConfilctError extends Error {
     }
 }
 
-export { BadRequest , ConfilctError };
+
+class NotFound extends Error {
+    constructor( status , message ) {
+        super();
+        this.status = status
+        this.name = "Not Found"
+        this.message = message
+    }
+}
+export { BadRequest , ConfilctError , NotFound };

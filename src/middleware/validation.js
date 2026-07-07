@@ -6,7 +6,7 @@ function validation( req , res , next ) {
     if ( body.error ) {
        return next( new BadRequest(400 , body.error.message))
     } else if (!body.value) {
-       return next(new BadRequest(400 , 'body is required'))
+        return next(new BadRequest(400 , 'body is required'))
     }
 
    return next();
