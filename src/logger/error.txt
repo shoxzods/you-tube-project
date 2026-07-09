@@ -19,3 +19,7 @@ Tue Jul 07 2026 23:04:12 GMT+0500 (Uzbekistan Standard Time)___error-name:Bad Re
 Tue Jul 07 2026 23:05:16 GMT+0500 (Uzbekistan Standard Time)___error-name:Bad Request__error-message:body is required
 Tue Jul 07 2026 23:18:30 GMT+0500 (Uzbekistan Standard Time)___error-name:Not Found__error-message:user not found
 Tue Jul 07 2026 23:19:46 GMT+0500 (Uzbekistan Standard Time)___error-name:Not Found__error-message:user not found
+Thu Jul 09 2026 21:24:42 GMT+0500 (Uzbekistan Standard Time)___error-name:Not Found__error-message:user not found
+Thu Jul 09 2026 21:30:06 GMT+0500 (Uzbekistan Standard Time)___error-name:ReferenceError__error-message:req is not defined
+Thu Jul 09 2026 21:30:54 GMT+0500 (Uzbekistan Standard Time)___error-name:ReferenceError__error-message:req is not defined
+Thu Jul 09 2026 21:42:45 GMT+0500 (Uzbekistan Standard Time)___error-name:Confilct__error-message:user already exist

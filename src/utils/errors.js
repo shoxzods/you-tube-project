@@ -16,7 +16,6 @@ class ConfilctError extends Error {
     }
 }
 
-
 class NotFound extends Error {
     constructor( status , message ) {
         super();
