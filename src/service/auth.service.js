@@ -22,6 +22,7 @@ async function login(body) {
 async function register(body , file) {
     const { full_name , password } = body;
     const img = !file ? null : Date.now() + '.' + file.mimetype.split('/')[1];
+
     const hash_pass = sha256(password);
     const data = await pool.query('select * from users where user_name = $1 and password = $2' , [ full_name , hash_pass ]);
 
