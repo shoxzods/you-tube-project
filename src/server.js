@@ -3,13 +3,16 @@ import { configDotenv } from "dotenv";
 import { join } from "path";
 import multer from "multer";
 import fs from "fs";
+import cors from "cors";
 
 configDotenv();
 import mainRouter from "./routers/main.router.js";
 
-
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(cors());
+
 app.use(mainRouter);
 
 app.use(( err , req , res , next ) => {
